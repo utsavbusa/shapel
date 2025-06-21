@@ -36,24 +36,6 @@ const Product = () => {
     }
   ];
 
-  const materials = [
-    "Aluminum Alloys",
-    "Steel & Stainless Steel",
-    "Cast Iron",
-    "Copper Alloys",
-    "Zinc Alloys",
-    "Magnesium Alloys"
-  ];
-
-  const industries = [
-    "Automotive",
-    "Aerospace",
-    "Marine",
-    "Construction",
-    "Industrial Equipment",
-    "Energy & Power"
-  ];
-
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -113,79 +95,58 @@ const Product = () => {
           </div>
         </section>
 
-        {/* Materials & Industries */}
+        {/* Our Products Gallery */}
         <section className="bg-gray-50 py-20 animate-fade-in">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12">
-                <div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-8">Materials We Work With</h3>
-                  <div className="grid grid-cols-2 gap-4">
-                    {materials.map((material, index) => (
-                      <div 
-                        key={index} 
-                        className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-all duration-300 hover-scale"
-                        style={{ animationDelay: `${index * 0.05}s` }}
-                      >
-                        <div className="flex items-center">
-                          <div className="w-3 h-3 bg-[#ED1C24] rounded-full mr-3"></div>
-                          <span className="text-gray-700 font-medium">{material}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-8">Industries We Serve</h3>
-                  <div className="grid grid-cols-2 gap-4">
-                    {industries.map((industry, index) => (
-                      <div 
-                        key={index} 
-                        className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-all duration-300 hover-scale"
-                        style={{ animationDelay: `${index * 0.05}s` }}
-                      >
-                        <div className="flex items-center">
-                          <div className="w-3 h-3 bg-[#ED1C24] rounded-full mr-3"></div>
-                          <span className="text-gray-700 font-medium">{industry}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Products</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                  Precision-engineered metal casting products that meet the highest industry standards.
+                </p>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Quality Assurance */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center animate-fade-in">
-              <h2 className="text-4xl font-bold text-gray-900 mb-8">Quality Assurance</h2>
-              <p className="text-xl text-gray-600 mb-12 leading-relaxed">
-                Every casting undergoes rigorous quality control processes to ensure it meets the highest standards of precision and durability.
-              </p>
+              
               <div className="grid md:grid-cols-3 gap-8">
-                <div className="text-center hover-scale">
-                  <div className="w-16 h-16 bg-[#ED1C24] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Shield className="w-8 h-8 text-white" />
+                <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden hover-scale">
+                  <div className="h-64 overflow-hidden">
+                    <img 
+                      src="/lovable-uploads/d6befdc7-3ffa-4f74-8587-810acb851f13.png" 
+                      alt="Metal Casting Component"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Material Testing</h4>
-                  <p className="text-gray-600">Comprehensive material analysis and testing protocols</p>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">Precision Components</h3>
+                    <p className="text-gray-600">High-precision metal components for industrial applications.</p>
+                  </div>
                 </div>
-                <div className="text-center hover-scale">
-                  <div className="w-16 h-16 bg-[#ED1C24] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Cog className="w-8 h-8 text-white" />
+
+                <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden hover-scale">
+                  <div className="h-64 overflow-hidden">
+                    <img 
+                      src="/lovable-uploads/79b2b5ba-baa3-4d9b-82f3-94c298c0437f.png" 
+                      alt="Metal Casting Flange"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Precision Measurement</h4>
-                  <p className="text-gray-600">Advanced measurement tools for dimensional accuracy</p>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">Custom Flanges</h3>
+                    <p className="text-gray-600">Specialized flanges designed for specific engineering requirements.</p>
+                  </div>
                 </div>
-                <div className="text-center hover-scale">
-                  <div className="w-16 h-16 bg-[#ED1C24] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Zap className="w-8 h-8 text-white" />
+
+                <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden hover-scale">
+                  <div className="h-64 overflow-hidden">
+                    <img 
+                      src="/lovable-uploads/6c1a7e65-7e0f-4f86-a4da-86d400793507.png" 
+                      alt="Metal Casting Ring"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Performance Testing</h4>
-                  <p className="text-gray-600">Rigorous testing to ensure optimal performance</p>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">Bearing Components</h3>
+                    <p className="text-gray-600">Durable bearing components with superior finish and accuracy.</p>
+                  </div>
                 </div>
               </div>
             </div>
