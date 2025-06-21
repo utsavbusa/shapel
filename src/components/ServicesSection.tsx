@@ -27,11 +27,11 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 animate-fade-in-up">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               What We <span className="text-[#ED1C24]">Offer</span>
             </h2>
@@ -41,11 +41,12 @@ const ServicesSection = () => {
           </div>
 
           {/* Services Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             {services.map((service, index) => (
               <div 
                 key={index} 
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#ED1C24] group"
+                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#ED1C24] group animate-scale-in"
+                style={{ animationDelay: `${0.1 * index}s` }}
               >
                 <div className="text-[#ED1C24] mb-6 group-hover:scale-110 transition-transform duration-300">
                   {service.icon}
@@ -57,8 +58,8 @@ const ServicesSection = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center mt-16">
-            <div className="bg-[#ED1C24] text-white p-8 rounded-2xl shadow-xl">
+          <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <div className="bg-[#ED1C24] text-white p-8 rounded-2xl shadow-xl hover-scale">
               <h3 className="text-2xl font-bold mb-4">Need a Custom Solution?</h3>
               <p className="text-lg mb-6 opacity-90">
                 Our expert team can develop tailored casting solutions for your unique requirements.

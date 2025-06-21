@@ -5,16 +5,24 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
-      {/* Background Pattern */}
+    <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden min-h-screen flex items-center">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+        }}
+      ></div>
+      
+      {/* Background Pattern Overlay */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-800 opacity-20"></div>
       </div>
       
-      <div className="container mx-auto px-4 py-32 relative">
+      <div className="container mx-auto px-4 py-32 relative animate-fade-in-up">
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo */}
-          <div className="mb-8 animate-scale-in">
+          <div className="mb-8 animate-scale-in-delayed" style={{ animationDelay: '0.2s' }}>
             <img 
               src="/lovable-uploads/707d3b93-5b12-4fcc-a657-6acc8f8ecc84.png" 
               alt="SHAPEL Logo" 
@@ -23,18 +31,18 @@ const HeroSection = () => {
           </div>
           
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             Precision Metal Casting
             <span className="block text-[#ED1C24]">Excellence</span>
           </h1>
           
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
             SHAPEL delivers superior metal casting solutions with unmatched precision, quality, and reliability for industries worldwide.
           </p>
           
           {/* Call to Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
             <Button 
               size="lg" 
               className="bg-[#ED1C24] hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group hover-scale"
@@ -54,7 +62,7 @@ const HeroSection = () => {
           </div>
           
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '1s' }}>
             <div className="text-center hover-scale">
               <div className="text-3xl md:text-4xl font-bold text-[#ED1C24] mb-2">20+</div>
               <div className="text-sm text-gray-400">Years Experience</div>

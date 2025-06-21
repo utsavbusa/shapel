@@ -28,11 +28,11 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white animate-fade-in-up">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Client <span className="text-[#ED1C24]">Testimonials</span>
             </h2>
@@ -42,11 +42,12 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index} 
-                className="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 relative"
+                className="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 relative hover-scale animate-scale-in"
+                style={{ animationDelay: `${0.1 * index}s` }}
               >
                 {/* Quote Icon */}
                 <div className="absolute top-4 right-4 text-[#ED1C24] opacity-20">
@@ -76,8 +77,8 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Bottom CTA */}
-          <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white p-8 rounded-2xl shadow-xl">
+          <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white p-8 rounded-2xl shadow-xl hover-scale">
               <h3 className="text-2xl font-bold mb-4">Join Our Satisfied Clients</h3>
               <p className="text-lg mb-6 opacity-90">
                 Experience the SHAPEL difference in your next metal casting project.
