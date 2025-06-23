@@ -9,8 +9,21 @@ const Product = () => {
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 animate-fade-in">
-          <div className="container mx-auto px-4">
+        <section className="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 animate-fade-in overflow-hidden">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+            style={{
+              backgroundImage: `url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+            }}
+          ></div>
+          
+          {/* Background Pattern Overlay */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-800 opacity-20"></div>
+          </div>
+          
+          <div className="container mx-auto px-4 relative">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-5xl font-bold mb-6">Our Products</h1>
               <p className="text-xl text-gray-300 leading-relaxed">
