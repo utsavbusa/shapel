@@ -1,10 +1,21 @@
-
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Factory, Users, Award, Clock, Shield, Cog, Zap } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useScrollToTop } from '../hooks/useScrollToTop';
 
 const About = () => {
+  useScrollToTop();
+
+  const heroAnimation = useScrollAnimation();
+  const storyAnimation = useScrollAnimation();
+  const ownersAnimation = useScrollAnimation();
+  const statsAnimation = useScrollAnimation();
+  const missionAnimation = useScrollAnimation();
+  const materialsAnimation = useScrollAnimation();
+  const qualityAnimation = useScrollAnimation();
+
   const materials = [
     "Aluminum Alloys",
     "Steel & Stainless Steel", 
@@ -28,7 +39,14 @@ const About = () => {
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 overflow-hidden animate-fade-in">
+        <section 
+          ref={heroAnimation.ref}
+          className={`relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 overflow-hidden transition-all duration-1000 ${
+            heroAnimation.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           {/* Background Image */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
@@ -53,7 +71,14 @@ const About = () => {
         </section>
 
         {/* Company Story */}
-        <section className="py-20 animate-fade-in-up">
+        <section 
+          ref={storyAnimation.ref}
+          className={`py-20 transition-all duration-1000 ${
+            storyAnimation.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -82,7 +107,14 @@ const About = () => {
         </section>
 
         {/* Meet Our Owners */}
-        <section className="py-20 bg-gray-50 animate-fade-in-up">
+        <section 
+          ref={ownersAnimation.ref}
+          className={`py-20 bg-gray-50 transition-all duration-1000 ${
+            ownersAnimation.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16 animate-slide-up">
@@ -128,7 +160,14 @@ const About = () => {
         </section>
 
         {/* Stats */}
-        <section className="bg-[#ED1C24] py-20 animate-fade-in-up">
+        <section 
+          ref={statsAnimation.ref}
+          className={`bg-[#ED1C24] py-20 transition-all duration-1000 ${
+            statsAnimation.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center text-white animate-bounce-in animate-delay-100">
@@ -156,7 +195,14 @@ const About = () => {
         </section>
 
         {/* Mission & Vision */}
-        <section className="py-20 animate-fade-in-up">
+        <section 
+          ref={missionAnimation.ref}
+          className={`py-20 transition-all duration-1000 ${
+            missionAnimation.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid md:grid-cols-2 gap-12">
@@ -178,7 +224,14 @@ const About = () => {
         </section>
 
         {/* Materials & Industries */}
-        <section className="bg-gray-50 py-20 animate-fade-in-up">
+        <section 
+          ref={materialsAnimation.ref}
+          className={`bg-gray-50 py-20 transition-all duration-1000 ${
+            materialsAnimation.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid md:grid-cols-2 gap-12">
@@ -220,7 +273,14 @@ const About = () => {
         </section>
 
         {/* Quality Assurance */}
-        <section className="py-20 animate-fade-in-up">
+        <section 
+          ref={qualityAnimation.ref}
+          className={`py-20 transition-all duration-1000 ${
+            qualityAnimation.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-4xl font-bold text-gray-900 mb-8 animate-slide-down">Quality Assurance</h2>

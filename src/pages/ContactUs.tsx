@@ -7,8 +7,16 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';  
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useScrollToTop } from '../hooks/useScrollToTop';
 
 const ContactUs = () => {
+  useScrollToTop();
+
+  const heroAnimation = useScrollAnimation();
+  const contactAnimation = useScrollAnimation();
+  const mapAnimation = useScrollAnimation();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -39,7 +47,14 @@ const ContactUs = () => {
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 overflow-hidden animate-fade-in">
+        <section 
+          ref={heroAnimation.ref}
+          className={`relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 overflow-hidden transition-all duration-1000 ${
+            heroAnimation.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           {/* Background Image */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
@@ -64,7 +79,14 @@ const ContactUs = () => {
         </section>
 
         {/* Contact Section */}
-        <section className="py-20 animate-fade-in-up">
+        <section 
+          ref={contactAnimation.ref}
+          className={`py-20 transition-all duration-1000 ${
+            contactAnimation.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-12">
@@ -207,7 +229,14 @@ const ContactUs = () => {
         </section>
 
         {/* Map Section */}
-        <section className="bg-gray-50 py-20 animate-fade-in-up">
+        <section 
+          ref={mapAnimation.ref}
+          className={`bg-gray-50 py-20 transition-all duration-1000 ${
+            mapAnimation.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-gray-900 mb-8 animate-slide-down">Find Us</h2>
