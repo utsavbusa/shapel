@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
 
@@ -32,22 +31,21 @@ const TestimonialsSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 animate-fade-in-up">
+          <div className="text-center mb-16 animate-slide-down">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Client <span className="text-[#ED1C24]">Testimonials</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animate-delay-200">
               Hear what our valued clients say about their experience working with SHAPEL.
             </p>
           </div>
 
           {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index} 
-                className="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 relative hover-scale animate-scale-in"
-                style={{ animationDelay: `${0.1 * index}s` }}
+                className={`bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 relative hover-lift animate-slide-up animate-delay-${(index + 1) * 200}`}
               >
                 {/* Quote Icon */}
                 <div className="absolute top-4 right-4 text-[#ED1C24] opacity-20">
@@ -77,7 +75,7 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Bottom CTA */}
-          <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <div className="text-center mt-16 animate-bounce-in animate-delay-800">
             <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white p-8 rounded-2xl shadow-xl hover-scale">
               <h3 className="text-2xl font-bold mb-4">Join Our Satisfied Clients</h3>
               <p className="text-lg mb-6 opacity-90">

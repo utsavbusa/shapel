@@ -7,7 +7,7 @@ import { Factory, Users, Award, Clock, Shield, Cog, Zap } from 'lucide-react';
 const About = () => {
   const materials = [
     "Aluminum Alloys",
-    "Steel & Stainless Steel",
+    "Steel & Stainless Steel", 
     "Cast Iron",
     "Copper Alloys",
     "Zinc Alloys",
@@ -28,12 +28,12 @@ const About = () => {
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 overflow-hidden animate-fade-in">
           {/* Background Image */}
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+              backgroundImage: `url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
             }}
           ></div>
           
@@ -44,8 +44,8 @@ const About = () => {
           
           <div className="container mx-auto px-4 relative">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-5xl font-bold mb-6">About SHAPEL</h1>
-              <p className="text-xl text-gray-300 leading-relaxed">
+              <h1 className="text-5xl font-bold mb-6 animate-slide-down">About SHAPEL</h1>
+              <p className="text-xl text-gray-300 leading-relaxed animate-fade-in-up animate-delay-300">
                 Leading the metal casting industry with precision, innovation, and unwavering quality since our founding.
               </p>
             </div>
@@ -53,11 +53,11 @@ const About = () => {
         </section>
 
         {/* Company Story */}
-        <section className="py-20">
+        <section className="py-20 animate-fade-in-up">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
+                <div className="animate-fade-in-left">
                   <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     SHAPEL has been at the forefront of metal casting innovation for over two decades. What started as a small foundry has grown into a leading manufacturer serving industries across the globe.
@@ -69,7 +69,7 @@ const About = () => {
                     Today, we combine traditional craftsmanship with cutting-edge technology to deliver exceptional results that exceed expectations.
                   </p>
                 </div>
-                <div className="bg-gray-100 p-8 rounded-lg">
+                <div className="bg-gray-100 p-8 rounded-lg hover-lift animate-fade-in-right">
                   <img src="/lovable-uploads/707d3b93-5b12-4fcc-a657-6acc8f8ecc84.png" alt="SHAPEL Logo" className="w-32 h-32 mx-auto mb-6" />
                   <div className="text-center">
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">SHAPEL</h3>
@@ -81,26 +81,72 @@ const About = () => {
           </div>
         </section>
 
+        {/* Meet Our Owners */}
+        <section className="py-20 bg-gray-50 animate-fade-in-up">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16 animate-slide-up">
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">Meet Our <span className="text-[#ED1C24]">Leaders</span></h2>
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  The visionary leaders behind SHAPEL's success and continued innovation.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-12">
+                <div className="bg-white p-8 rounded-xl shadow-lg hover-lift animate-fade-in-left animate-delay-200">
+                  <div className="text-center">
+                    <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-6 overflow-hidden">
+                      <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+                        <Users className="w-16 h-16 text-gray-500" />
+                      </div>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">John Smith</h3>
+                    <p className="text-[#ED1C24] font-semibold mb-4">Co-Founder & CEO</p>
+                    <p className="text-gray-600 leading-relaxed">
+                      With over 25 years in the metal casting industry, John brings visionary leadership and technical expertise that has guided SHAPEL to become an industry leader.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="bg-white p-8 rounded-xl shadow-lg hover-lift animate-fade-in-right animate-delay-400">
+                  <div className="text-center">
+                    <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-6 overflow-hidden">
+                      <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+                        <Users className="w-16 h-16 text-gray-500" />
+                      </div>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Sarah Johnson</h3>
+                    <p className="text-[#ED1C24] font-semibold mb-4">Co-Founder & CTO</p>
+                    <p className="text-gray-600 leading-relaxed">
+                      Sarah's innovative approach to manufacturing technology and quality systems has positioned SHAPEL at the forefront of precision metal casting solutions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Stats */}
-        <section className="bg-[#ED1C24] py-20">
+        <section className="bg-[#ED1C24] py-20 animate-fade-in-up">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center text-white">
+              <div className="text-center text-white animate-bounce-in animate-delay-100">
                 <Factory className="w-12 h-12 mx-auto mb-4" />
                 <div className="text-3xl font-bold mb-2">20+</div>
                 <div className="text-sm opacity-90">Years Experience</div>
               </div>
-              <div className="text-center text-white">
+              <div className="text-center text-white animate-bounce-in animate-delay-200">
                 <Users className="w-12 h-12 mx-auto mb-4" />
                 <div className="text-3xl font-bold mb-2">500+</div>
                 <div className="text-sm opacity-90">Satisfied Clients</div>
               </div>
-              <div className="text-center text-white">
+              <div className="text-center text-white animate-bounce-in animate-delay-300">
                 <Award className="w-12 h-12 mx-auto mb-4" />
                 <div className="text-3xl font-bold mb-2">50+</div>
                 <div className="text-sm opacity-90">Industry Awards</div>
               </div>
-              <div className="text-center text-white">
+              <div className="text-center text-white animate-bounce-in animate-delay-400">
                 <Clock className="w-12 h-12 mx-auto mb-4" />
                 <div className="text-3xl font-bold mb-2">24/7</div>
                 <div className="text-sm opacity-90">Support Available</div>
@@ -110,17 +156,17 @@ const About = () => {
         </section>
 
         {/* Mission & Vision */}
-        <section className="py-20">
+        <section className="py-20 animate-fade-in-up">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid md:grid-cols-2 gap-12">
-                <div className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-[#ED1C24]">
+                <div className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-[#ED1C24] hover-lift animate-fade-in-left">
                   <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
                   <p className="text-gray-600 leading-relaxed">
                     To deliver superior metal casting solutions that meet the highest standards of quality, precision, and reliability. We are committed to building long-term partnerships with our clients by consistently exceeding their expectations and contributing to their success.
                   </p>
                 </div>
-                <div className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-[#ED1C24]">
+                <div className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-[#ED1C24] hover-lift animate-fade-in-right animate-delay-200">
                   <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h3>
                   <p className="text-gray-600 leading-relaxed">
                     To be the global leader in innovative metal casting solutions, driving industry standards forward through continuous improvement, technological advancement, and sustainable practices that benefit our customers, employees, and communities.
@@ -132,18 +178,17 @@ const About = () => {
         </section>
 
         {/* Materials & Industries */}
-        <section className="bg-gray-50 py-20 animate-fade-in">
+        <section className="bg-gray-50 py-20 animate-fade-in-up">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid md:grid-cols-2 gap-12">
-                <div>
+                <div className="animate-slide-up">
                   <h3 className="text-3xl font-bold text-gray-900 mb-8">Materials We Work With</h3>
                   <div className="grid grid-cols-2 gap-4">
                     {materials.map((material, index) => (
                       <div 
                         key={index} 
-                        className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-all duration-300 hover-scale"
-                        style={{ animationDelay: `${index * 0.05}s` }}
+                        className={`bg-white p-4 rounded-lg shadow hover:shadow-md transition-all duration-300 hover-scale animate-scale-in animate-delay-${(index + 1) * 100}`}
                       >
                         <div className="flex items-center">
                           <div className="w-3 h-3 bg-[#ED1C24] rounded-full mr-3"></div>
@@ -153,14 +198,13 @@ const About = () => {
                     ))}
                   </div>
                 </div>
-                <div>
+                <div className="animate-slide-up animate-delay-300">
                   <h3 className="text-3xl font-bold text-gray-900 mb-8">Industries We Serve</h3>
                   <div className="grid grid-cols-2 gap-4">
                     {industries.map((industry, index) => (
                       <div 
                         key={index} 
-                        className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-all duration-300 hover-scale"
-                        style={{ animationDelay: `${index * 0.05}s` }}
+                        className={`bg-white p-4 rounded-lg shadow hover:shadow-md transition-all duration-300 hover-scale animate-scale-in animate-delay-${(index + 1) * 100 + 200}`}
                       >
                         <div className="flex items-center">
                           <div className="w-3 h-3 bg-[#ED1C24] rounded-full mr-3"></div>
@@ -176,29 +220,29 @@ const About = () => {
         </section>
 
         {/* Quality Assurance */}
-        <section className="py-20">
+        <section className="py-20 animate-fade-in-up">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center animate-fade-in">
-              <h2 className="text-4xl font-bold text-gray-900 mb-8">Quality Assurance</h2>
-              <p className="text-xl text-gray-600 mb-12 leading-relaxed">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl font-bold text-gray-900 mb-8 animate-slide-down">Quality Assurance</h2>
+              <p className="text-xl text-gray-600 mb-12 leading-relaxed animate-fade-in-up animate-delay-200">
                 Every casting undergoes rigorous quality control processes to ensure it meets the highest standards of precision and durability.
               </p>
               <div className="grid md:grid-cols-3 gap-8">
-                <div className="text-center hover-scale">
+                <div className="text-center hover-lift animate-rotate-in animate-delay-300">
                   <div className="w-16 h-16 bg-[#ED1C24] rounded-full flex items-center justify-center mx-auto mb-4">
                     <Shield className="w-8 h-8 text-white" />
                   </div>
                   <h4 className="text-xl font-bold text-gray-900 mb-2">Material Testing</h4>
                   <p className="text-gray-600">Comprehensive material analysis and testing protocols</p>
                 </div>
-                <div className="text-center hover-scale">
+                <div className="text-center hover-lift animate-rotate-in animate-delay-500">
                   <div className="w-16 h-16 bg-[#ED1C24] rounded-full flex items-center justify-center mx-auto mb-4">
                     <Cog className="w-8 h-8 text-white" />
                   </div>
                   <h4 className="text-xl font-bold text-gray-900 mb-2">Precision Measurement</h4>
                   <p className="text-gray-600">Advanced measurement tools for dimensional accuracy</p>
                 </div>
-                <div className="text-center hover-scale">
+                <div className="text-center hover-lift animate-rotate-in animate-delay-700">
                   <div className="w-16 h-16 bg-[#ED1C24] rounded-full flex items-center justify-center mx-auto mb-4">
                     <Zap className="w-8 h-8 text-white" />
                   </div>

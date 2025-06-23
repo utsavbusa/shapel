@@ -41,15 +41,15 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 animate-fade-in-up">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-slide-down">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Frequently Asked <span className="text-[#ED1C24]">Questions</span>
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-xl text-gray-600 leading-relaxed animate-fade-in-up animate-delay-200">
               Find answers to common questions about our metal casting services and processes.
             </p>
           </div>
@@ -59,7 +59,7 @@ const FAQSection = () => {
             {faqs.map((faq, index) => (
               <div 
                 key={index} 
-                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                className={`bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-slide-up animate-delay-${(index + 1) * 100}`}
               >
                 <button
                   className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none"
@@ -91,11 +91,11 @@ const FAQSection = () => {
           </div>
 
           {/* Contact CTA */}
-          <div className="text-center mt-12">
+          <div className="text-center mt-12 animate-bounce-in animate-delay-800">
             <p className="text-gray-600 mb-4">
               Don't see your question answered here?
             </p>
-            <button className="bg-[#ED1C24] text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+            <button className="bg-[#ED1C24] text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors hover-scale">
               Contact Our Experts
             </button>
           </div>
