@@ -1,7 +1,13 @@
+
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const TestimonialsSection = () => {
+  const headerAnimation = useScrollAnimation();
+  const testimonialsAnimation = useScrollAnimation();
+  const ctaAnimation = useScrollAnimation();
+
   const testimonials = [
     {
       name: "Michael Chen",
@@ -27,25 +33,42 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white animate-fade-in-up">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 animate-slide-down">
+          <div 
+            ref={headerAnimation.ref}
+            className={`text-center mb-16 transition-all duration-1000 ${
+              headerAnimation.isVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-8'
+            }`}
+          >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Client <span className="text-[#ED1C24]">Testimonials</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animate-delay-200">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Hear what our valued clients say about their experience working with SHAPEL.
             </p>
           </div>
 
           {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div 
+            ref={testimonialsAnimation.ref}
+            className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-1000 delay-200 ${
+              testimonialsAnimation.isVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-8'
+            }`}
+          >
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index} 
-                className={`bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 relative hover-lift animate-slide-up animate-delay-${(index + 1) * 200}`}
+                className={`bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 relative hover-lift ${
+                  testimonialsAnimation.isVisible ? 'animate-fade-in-up' : ''
+                }`}
+                style={{ animationDelay: `${index * 150}ms` }}
               >
                 {/* Quote Icon */}
                 <div className="absolute top-4 right-4 text-[#ED1C24] opacity-20">
@@ -75,7 +98,14 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Bottom CTA */}
-          <div className="text-center mt-16 animate-bounce-in animate-delay-800">
+          <div 
+            ref={ctaAnimation.ref}
+            className={`text-center mt-16 transition-all duration-1000 delay-600 ${
+              ctaAnimation.isVisible 
+                ? 'opacity-100 scale-100' 
+                : 'opacity-0 scale-95'
+            }`}
+          >
             <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white p-8 rounded-2xl shadow-xl hover-scale">
               <h3 className="text-2xl font-bold mb-4">Join Our Satisfied Clients</h3>
               <p className="text-lg mb-6 opacity-90">

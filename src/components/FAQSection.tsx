@@ -1,9 +1,13 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const FAQSection = () => {
   const [openItems, setOpenItems] = useState<number[]>([]);
+  const headerAnimation = useScrollAnimation();
+  const faqAnimation = useScrollAnimation();
+  const ctaAnimation = useScrollAnimation();
 
   const toggleItem = (index: number) => {
     setOpenItems(prev => 
@@ -41,25 +45,42 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50 animate-fade-in-up">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 animate-slide-down">
+          <div 
+            ref={headerAnimation.ref}
+            className={`text-center mb-16 transition-all duration-1000 ${
+              headerAnimation.isVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-8'
+            }`}
+          >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Frequently Asked <span className="text-[#ED1C24]">Questions</span>
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed animate-fade-in-up animate-delay-200">
+            <p className="text-xl text-gray-600 leading-relaxed">
               Find answers to common questions about our metal casting services and processes.
             </p>
           </div>
 
           {/* FAQ Items */}
-          <div className="space-y-4">
+          <div 
+            ref={faqAnimation.ref}
+            className={`space-y-4 transition-all duration-1000 delay-200 ${
+              faqAnimation.isVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-8'
+            }`}
+          >
             {faqs.map((faq, index) => (
               <div 
                 key={index} 
-                className={`bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-slide-up animate-delay-${(index + 1) * 100}`}
+                className={`bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ${
+                  faqAnimation.isVisible ? 'animate-fade-in-up' : ''
+                }`}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <button
                   className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none"
@@ -91,7 +112,14 @@ const FAQSection = () => {
           </div>
 
           {/* Contact CTA */}
-          <div className="text-center mt-12 animate-bounce-in animate-delay-800">
+          <div 
+            ref={ctaAnimation.ref}
+            className={`text-center mt-12 transition-all duration-1000 delay-600 ${
+              ctaAnimation.isVisible 
+                ? 'opacity-100 scale-100' 
+                : 'opacity-0 scale-95'
+            }`}
+          >
             <p className="text-gray-600 mb-4">
               Don't see your question answered here?
             </p>
