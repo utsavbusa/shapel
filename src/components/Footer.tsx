@@ -1,7 +1,6 @@
-
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Facebook, Linkedin, Instagram } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Phone, Mail, MapPin, Facebook, Linkedin, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -11,9 +10,9 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <img 
-                src="/lovable-uploads/707d3b93-5b12-4fcc-a657-6acc8f8ecc84.png" 
-                alt="SHAPEL Logo" 
+              <img
+                src="/lovable-uploads/707d3b93-5b12-4fcc-a657-6acc8f8ecc84.png"
+                alt="SHAPEL Logo"
                 className="h-10 w-10"
               />
               <span className="text-2xl font-bold">SHAPEL</span>
@@ -54,6 +53,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/materials" className="text-gray-400 hover:text-white transition-colors">
+                  Materials
+                </Link>
+              </li>
+              <li>
                 <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">
                   Contact Us
                 </Link>
@@ -69,8 +73,10 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-[#ED1C24] mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    123 Industrial Boulevard<br />
-                    Manufacturing District<br />
+                    123 Industrial Boulevard
+                    <br />
+                    Manufacturing District
+                    <br />
                     Metalworks City, MC 12345
                   </p>
                 </div>

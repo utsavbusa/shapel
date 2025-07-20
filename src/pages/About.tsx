@@ -1,9 +1,9 @@
-import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import { Factory, Users, Award, Clock, Shield, Cog, Zap } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { useScrollToTop } from '../hooks/useScrollToTop';
+import React from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { Factory, Users, Award, Clock, Shield, Cog, Zap } from "lucide-react";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { useScrollToTop } from "../hooks/useScrollToTop";
 
 const About = () => {
   useScrollToTop();
@@ -18,84 +18,78 @@ const About = () => {
 
   const materials = [
     "Aluminum Alloys",
-    "Steel & Stainless Steel", 
+    "Steel & Stainless Steel",
     "Cast Iron",
     "Copper Alloys",
     "Zinc Alloys",
-    "Magnesium Alloys"
+    "Magnesium Alloys",
   ];
 
-  const industries = [
-    "Automotive",
-    "Aerospace",
-    "Marine",
-    "Construction",
-    "Industrial Equipment",
-    "Energy & Power"
-  ];
+  const industries = ["Automotive", "Aerospace", "Marine", "Construction", "Industrial Equipment", "Energy & Power"];
 
   return (
     <div className="min-h-screen bg-white">
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <section 
+        <section
           ref={heroAnimation.ref}
           className={`relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 overflow-hidden transition-all duration-1000 ${
-            heroAnimation.isVisible 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-8'
-          }`}
-        >
+            heroAnimation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
           {/* Background Image */}
-          <div 
+          <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
-            }}
-          ></div>
-          
+              backgroundImage: `url('https://images.unsplash.com/photo-1572019637935-a6bc9723b3b6?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+            }}></div>
+
           {/* Background Pattern Overlay */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-800 opacity-20"></div>
           </div>
-          
+
           <div className="container mx-auto px-4 relative">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-5xl font-bold mb-6 animate-slide-down">About SHAPEL</h1>
               <p className="text-xl text-gray-300 leading-relaxed animate-fade-in-up animate-delay-300">
-                Leading the metal casting industry with precision, innovation, and unwavering quality since our founding.
+                Leading the metal casting industry with precision, innovation, and unwavering quality since our
+                founding.
               </p>
             </div>
           </div>
         </section>
 
         {/* Company Story */}
-        <section 
+        <section
           ref={storyAnimation.ref}
           className={`py-20 transition-all duration-1000 ${
-            storyAnimation.isVisible 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-8'
-          }`}
-        >
+            storyAnimation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="animate-fade-in-left">
                   <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
                   <p className="text-gray-600 mb-6 leading-relaxed">
-                    SHAPEL has been at the forefront of metal casting innovation for over two decades. What started as a small foundry has grown into a leading manufacturer serving industries across the globe.
+                    SHAPEL has been at the forefront of metal casting innovation for over two decades. What started as a
+                    small foundry has grown into a leading manufacturer serving industries across the globe.
                   </p>
                   <p className="text-gray-600 mb-6 leading-relaxed">
-                    Our commitment to precision, quality, and customer satisfaction has made us the trusted partner for companies requiring complex metal casting solutions.
+                    Our commitment to precision, quality, and customer satisfaction has made us the trusted partner for
+                    companies requiring complex metal casting solutions.
                   </p>
                   <p className="text-gray-600 leading-relaxed">
-                    Today, we combine traditional craftsmanship with cutting-edge technology to deliver exceptional results that exceed expectations.
+                    Today, we combine traditional craftsmanship with cutting-edge technology to deliver exceptional
+                    results that exceed expectations.
                   </p>
                 </div>
                 <div className="bg-gray-100 p-8 rounded-lg hover-lift animate-fade-in-right">
-                  <img src="/lovable-uploads/707d3b93-5b12-4fcc-a657-6acc8f8ecc84.png" alt="SHAPEL Logo" className="w-32 h-32 mx-auto mb-6" />
+                  <img
+                    src="/lovable-uploads/707d3b93-5b12-4fcc-a657-6acc8f8ecc84.png"
+                    alt="SHAPEL Logo"
+                    className="w-32 h-32 mx-auto mb-6"
+                  />
                   <div className="text-center">
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">SHAPEL</h3>
                     <p className="text-gray-600">Shaping Metal, Building Future</p>
@@ -107,23 +101,22 @@ const About = () => {
         </section>
 
         {/* Meet Our Owners */}
-        <section 
+        <section
           ref={ownersAnimation.ref}
           className={`py-20 bg-gray-50 transition-all duration-1000 ${
-            ownersAnimation.isVisible 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-8'
-          }`}
-        >
+            ownersAnimation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16 animate-slide-up">
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">Meet Our <span className="text-[#ED1C24]">Leaders</span></h2>
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                  Meet Our <span className="text-[#ED1C24]">Leaders</span>
+                </h2>
                 <p className="text-xl text-gray-600 leading-relaxed">
                   The visionary leaders behind SHAPEL's success and continued innovation.
                 </p>
               </div>
-              
+
               <div className="grid md:grid-cols-2 gap-12">
                 <div className="bg-white p-8 rounded-xl shadow-lg hover-lift animate-fade-in-left animate-delay-200">
                   <div className="text-center">
@@ -132,14 +125,15 @@ const About = () => {
                         <Users className="w-16 h-16 text-gray-500" />
                       </div>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">John Smith</h3>
-                    <p className="text-[#ED1C24] font-semibold mb-4">Co-Founder & CEO</p>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">MR. UTTAM SANKHAVARA</h3>
+                    <p className="text-[#ED1C24] font-semibold mb-4">Co-Founder & Director</p>
                     <p className="text-gray-600 leading-relaxed">
-                      With over 25 years in the metal casting industry, John brings visionary leadership and technical expertise that has guided SHAPEL to become an industry leader.
+                      With over 25 years in the metal casting industry, John brings visionary leadership and technical
+                      expertise that has guided SHAPEL to become an industry leader.
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="bg-white p-8 rounded-xl shadow-lg hover-lift animate-fade-in-right animate-delay-400">
                   <div className="text-center">
                     <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-6 overflow-hidden">
@@ -147,10 +141,11 @@ const About = () => {
                         <Users className="w-16 h-16 text-gray-500" />
                       </div>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Sarah Johnson</h3>
-                    <p className="text-[#ED1C24] font-semibold mb-4">Co-Founder & CTO</p>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">MR. KEYUR SAKHAVARA</h3>
+                    <p className="text-[#ED1C24] font-semibold mb-4">Co-Founder & Director</p>
                     <p className="text-gray-600 leading-relaxed">
-                      Sarah's innovative approach to manufacturing technology and quality systems has positioned SHAPEL at the forefront of precision metal casting solutions.
+                      Sarah's innovative approach to manufacturing technology and quality systems has positioned SHAPEL
+                      at the forefront of precision metal casting solutions.
                     </p>
                   </div>
                 </div>
@@ -160,14 +155,11 @@ const About = () => {
         </section>
 
         {/* Stats */}
-        <section 
+        <section
           ref={statsAnimation.ref}
           className={`bg-[#ED1C24] py-20 transition-all duration-1000 ${
-            statsAnimation.isVisible 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-8'
-          }`}
-        >
+            statsAnimation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center text-white animate-bounce-in animate-delay-100">
@@ -195,27 +187,28 @@ const About = () => {
         </section>
 
         {/* Mission & Vision */}
-        <section 
+        <section
           ref={missionAnimation.ref}
           className={`py-20 transition-all duration-1000 ${
-            missionAnimation.isVisible 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-8'
-          }`}
-        >
+            missionAnimation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid md:grid-cols-2 gap-12">
                 <div className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-[#ED1C24] hover-lift animate-fade-in-left">
                   <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    To deliver superior metal casting solutions that meet the highest standards of quality, precision, and reliability. We are committed to building long-term partnerships with our clients by consistently exceeding their expectations and contributing to their success.
+                    To deliver superior metal casting solutions that meet the highest standards of quality, precision,
+                    and reliability. We are committed to building long-term partnerships with our clients by
+                    consistently exceeding their expectations and contributing to their success.
                   </p>
                 </div>
                 <div className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-[#ED1C24] hover-lift animate-fade-in-right animate-delay-200">
                   <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    To be the global leader in innovative metal casting solutions, driving industry standards forward through continuous improvement, technological advancement, and sustainable practices that benefit our customers, employees, and communities.
+                    To be the global leader in innovative metal casting solutions, driving industry standards forward
+                    through continuous improvement, technological advancement, and sustainable practices that benefit
+                    our customers, employees, and communities.
                   </p>
                 </div>
               </div>
@@ -224,14 +217,11 @@ const About = () => {
         </section>
 
         {/* Materials & Industries */}
-        <section 
+        <section
           ref={materialsAnimation.ref}
           className={`bg-gray-50 py-20 transition-all duration-1000 ${
-            materialsAnimation.isVisible 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-8'
-          }`}
-        >
+            materialsAnimation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid md:grid-cols-2 gap-12">
@@ -239,10 +229,11 @@ const About = () => {
                   <h3 className="text-3xl font-bold text-gray-900 mb-8">Materials We Work With</h3>
                   <div className="grid grid-cols-2 gap-4">
                     {materials.map((material, index) => (
-                      <div 
-                        key={index} 
-                        className={`bg-white p-4 rounded-lg shadow hover:shadow-md transition-all duration-300 hover-scale animate-scale-in animate-delay-${(index + 1) * 100}`}
-                      >
+                      <div
+                        key={index}
+                        className={`bg-white p-4 rounded-lg shadow hover:shadow-md transition-all duration-300 hover-scale animate-scale-in animate-delay-${
+                          (index + 1) * 100
+                        }`}>
                         <div className="flex items-center">
                           <div className="w-3 h-3 bg-[#ED1C24] rounded-full mr-3"></div>
                           <span className="text-gray-700 font-medium">{material}</span>
@@ -255,10 +246,11 @@ const About = () => {
                   <h3 className="text-3xl font-bold text-gray-900 mb-8">Industries We Serve</h3>
                   <div className="grid grid-cols-2 gap-4">
                     {industries.map((industry, index) => (
-                      <div 
-                        key={index} 
-                        className={`bg-white p-4 rounded-lg shadow hover:shadow-md transition-all duration-300 hover-scale animate-scale-in animate-delay-${(index + 1) * 100 + 200}`}
-                      >
+                      <div
+                        key={index}
+                        className={`bg-white p-4 rounded-lg shadow hover:shadow-md transition-all duration-300 hover-scale animate-scale-in animate-delay-${
+                          (index + 1) * 100 + 200
+                        }`}>
                         <div className="flex items-center">
                           <div className="w-3 h-3 bg-[#ED1C24] rounded-full mr-3"></div>
                           <span className="text-gray-700 font-medium">{industry}</span>
@@ -273,19 +265,17 @@ const About = () => {
         </section>
 
         {/* Quality Assurance */}
-        <section 
+        <section
           ref={qualityAnimation.ref}
           className={`py-20 transition-all duration-1000 ${
-            qualityAnimation.isVisible 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-8'
-          }`}
-        >
+            qualityAnimation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-4xl font-bold text-gray-900 mb-8 animate-slide-down">Quality Assurance</h2>
               <p className="text-xl text-gray-600 mb-12 leading-relaxed animate-fade-in-up animate-delay-200">
-                Every casting undergoes rigorous quality control processes to ensure it meets the highest standards of precision and durability.
+                Every casting undergoes rigorous quality control processes to ensure it meets the highest standards of
+                precision and durability.
               </p>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center hover-lift animate-rotate-in animate-delay-300">

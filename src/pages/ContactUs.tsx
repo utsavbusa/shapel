@@ -1,14 +1,13 @@
-
-import React, { useState } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';  
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { useScrollToTop } from '../hooks/useScrollToTop';
+import React, { useState } from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { useScrollToTop } from "../hooks/useScrollToTop";
 
 const ContactUs = () => {
   useScrollToTop();
@@ -18,27 +17,27 @@ const ContactUs = () => {
   const mapAnimation = useScrollAnimation();
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
   const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Contact form submitted:', formData);
+    console.log("Contact form submitted:", formData);
     toast({
       title: "Message Sent!",
       description: "We'll get back to you within 24 hours.",
     });
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -47,27 +46,23 @@ const ContactUs = () => {
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <section 
+        <section
           ref={heroAnimation.ref}
           className={`relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 overflow-hidden transition-all duration-1000 ${
-            heroAnimation.isVisible 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-8'
-          }`}
-        >
+            heroAnimation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
           {/* Background Image */}
-          <div 
+          <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
-            }}
-          ></div>
-          
+              backgroundImage: `url('https://images.unsplash.com/photo-1572019637935-a6bc9723b3b6?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+            }}></div>
+
           {/* Background Pattern Overlay */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-800 opacity-20"></div>
           </div>
-          
+
           <div className="container mx-auto px-4 relative">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-5xl font-bold mb-6 animate-slide-down">Contact SHAPEL</h1>
@@ -79,14 +74,11 @@ const ContactUs = () => {
         </section>
 
         {/* Contact Section */}
-        <section 
+        <section
           ref={contactAnimation.ref}
           className={`py-20 transition-all duration-1000 ${
-            contactAnimation.isVisible 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-8'
-          }`}
-        >
+            contactAnimation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-12">
@@ -153,10 +145,9 @@ const ContactUs = () => {
                         placeholder="Tell us about your project requirements..."
                       />
                     </div>
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-[#ED1C24] hover:bg-red-700 text-white py-3 text-lg font-semibold animate-bounce-in animate-delay-600"
-                    >
+                    <Button
+                      type="submit"
+                      className="w-full bg-[#ED1C24] hover:bg-red-700 text-white py-3 text-lg font-semibold animate-bounce-in animate-delay-600">
                       Send Message
                     </Button>
                   </form>
@@ -173,8 +164,10 @@ const ContactUs = () => {
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">Our Address</h3>
                         <p className="text-gray-600">
-                          123 Industrial Boulevard<br />
-                          Manufacturing District<br />
+                          123 Industrial Boulevard
+                          <br />
+                          Manufacturing District
+                          <br />
                           Metalworks City, MC 12345
                         </p>
                       </div>
@@ -187,8 +180,10 @@ const ContactUs = () => {
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">Phone Numbers</h3>
                         <p className="text-gray-600">
-                          Main: (555) 123-4567<br />
-                          Sales: (555) 123-4568<br />
+                          Main: (555) 123-4567
+                          <br />
+                          Sales: (555) 123-4568
+                          <br />
                           Support: (555) 123-4569
                         </p>
                       </div>
@@ -201,8 +196,10 @@ const ContactUs = () => {
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">Email Address</h3>
                         <p className="text-gray-600">
-                          info@shapel.com<br />
-                          sales@shapel.com<br />
+                          info@shapel.com
+                          <br />
+                          sales@shapel.com
+                          <br />
                           support@shapel.com
                         </p>
                       </div>
@@ -215,8 +212,10 @@ const ContactUs = () => {
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">Business Hours</h3>
                         <p className="text-gray-600">
-                          Monday - Friday: 8:00 AM - 6:00 PM<br />
-                          Saturday: 9:00 AM - 4:00 PM<br />
+                          Monday - Friday: 8:00 AM - 6:00 PM
+                          <br />
+                          Saturday: 9:00 AM - 4:00 PM
+                          <br />
                           Sunday: Closed
                         </p>
                       </div>
@@ -229,14 +228,11 @@ const ContactUs = () => {
         </section>
 
         {/* Map Section */}
-        <section 
+        <section
           ref={mapAnimation.ref}
           className={`bg-gray-50 py-20 transition-all duration-1000 ${
-            mapAnimation.isVisible 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-8'
-          }`}
-        >
+            mapAnimation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-gray-900 mb-8 animate-slide-down">Find Us</h2>
