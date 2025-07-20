@@ -73,18 +73,20 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-[#ED1C24] mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    123 Industrial Boulevard
+                    Shree Shakti Technocast LLP
                     <br />
-                    Manufacturing District
+                    PLOT NO. 1 + 2 , SR NO. 361/3/1
                     <br />
-                    Metalworks City, MC 12345
+                    KAGDADI,RAJKOT GUJARAT
+                    <br />
+                    360003
                   </p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-[#ED1C24] flex-shrink-0" />
                 <a href="mailto:info@shapel.com" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  info@shapel.com
+                  info@shreeshaktitechnocast.com
                 </a>
               </div>
             </div>
@@ -97,19 +99,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-[#ED1C24] flex-shrink-0" />
                 <div>
-                  <p className="text-gray-400 text-sm">Main: (555) 123-4567</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-[#ED1C24] flex-shrink-0" />
-                <div>
-                  <p className="text-gray-400 text-sm">Sales: (555) 123-4568</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-[#ED1C24] flex-shrink-0" />
-                <div>
-                  <p className="text-gray-400 text-sm">Support: (555) 123-4569</p>
+                  <p className="text-gray-400 text-sm">+91 8000088535</p>
                 </div>
               </div>
             </div>

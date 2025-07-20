@@ -164,11 +164,13 @@ const ContactUs = () => {
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">Our Address</h3>
                         <p className="text-gray-600">
-                          123 Industrial Boulevard
+                          Shree Shakti Technocast LLP
                           <br />
-                          Manufacturing District
+                          PLOT NO. 1 + 2 , SR NO. 361/3/1
                           <br />
-                          Metalworks City, MC 12345
+                          KAGDADI,RAJKOT GUJARAT
+                          <br />
+                          360003
                         </p>
                       </div>
                     </div>
@@ -179,13 +181,7 @@ const ContactUs = () => {
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">Phone Numbers</h3>
-                        <p className="text-gray-600">
-                          Main: (555) 123-4567
-                          <br />
-                          Sales: (555) 123-4568
-                          <br />
-                          Support: (555) 123-4569
-                        </p>
+                        <p className="text-gray-600">+91 8000088535</p>
                       </div>
                     </div>
 
@@ -195,13 +191,7 @@ const ContactUs = () => {
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">Email Address</h3>
-                        <p className="text-gray-600">
-                          info@shapel.com
-                          <br />
-                          sales@shapel.com
-                          <br />
-                          support@shapel.com
-                        </p>
+                        <p className="text-gray-600">info@shreeshaktitechnocast.com</p>
                       </div>
                     </div>
 

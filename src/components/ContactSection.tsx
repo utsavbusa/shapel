@@ -1,39 +1,38 @@
-
-import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Send } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import React, { useState } from "react";
+import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
   const { toast } = useToast();
-  
+
   const headerAnimation = useScrollAnimation();
   const formAnimation = useScrollAnimation();
   const infoAnimation = useScrollAnimation();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Contact form submitted:', formData);
+    console.log("Contact form submitted:", formData);
     toast({
       title: "Message Sent Successfully!",
       description: "We'll get back to you within 24 hours.",
     });
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -42,14 +41,11 @@ const ContactSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div 
+          <div
             ref={headerAnimation.ref}
             className={`text-center mb-16 transition-all duration-1000 ${
-              headerAnimation.isVisible 
-                ? 'opacity-100 translate-y-0' 
-                : 'opacity-0 translate-y-8'
-            }`}
-          >
+              headerAnimation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Get In <span className="text-[#ED1C24]">Touch</span>
             </h2>
@@ -60,14 +56,11 @@ const ContactSection = () => {
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div 
+            <div
               ref={formAnimation.ref}
               className={`bg-gray-50 p-8 rounded-2xl shadow-lg hover-lift transition-all duration-1000 ${
-                formAnimation.isVisible 
-                  ? 'opacity-100 -translate-x-0' 
-                  : 'opacity-0 -translate-x-8'
-              }`}
-            >
+                formAnimation.isVisible ? "opacity-100 -translate-x-0" : "opacity-0 -translate-x-8"
+              }`}>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
@@ -131,10 +124,9 @@ const ContactSection = () => {
                     className="w-full"
                   />
                 </div>
-                <Button 
-                  type="submit" 
-                  className="w-full bg-[#ED1C24] hover:bg-red-700 text-white py-3 text-lg font-semibold group hover-scale"
-                >
+                <Button
+                  type="submit"
+                  className="w-full bg-[#ED1C24] hover:bg-red-700 text-white py-3 text-lg font-semibold group hover-scale">
                   Send Message
                   <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
@@ -142,17 +134,14 @@ const ContactSection = () => {
             </div>
 
             {/* Contact Information */}
-            <div 
+            <div
               ref={infoAnimation.ref}
               className={`space-y-8 transition-all duration-1000 delay-200 ${
-                infoAnimation.isVisible 
-                  ? 'opacity-100 translate-x-0' 
-                  : 'opacity-0 translate-x-8'
-              }`}
-            >
+                infoAnimation.isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+              }`}>
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-8">Contact Information</h3>
-                
+
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-[#ED1C24] rounded-full flex items-center justify-center flex-shrink-0">
@@ -161,9 +150,13 @@ const ContactSection = () => {
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-2">Our Address</h4>
                       <p className="text-gray-600">
-                        123 Industrial Boulevard<br />
-                        Manufacturing District<br />
-                        Metalworks City, MC 12345
+                        Shree Shakti Technocast LLP
+                        <br />
+                        PLOT NO. 1 + 2 , SR NO. 361/3/1
+                        <br />
+                        KAGDADI,RAJKOT GUJARAT
+                        <br />
+                        360003
                       </p>
                     </div>
                   </div>
@@ -174,11 +167,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-2">Phone Numbers</h4>
-                      <p className="text-gray-600">
-                        Main: (555) 123-4567<br />
-                        Sales: (555) 123-4568<br />
-                        Support: (555) 123-4569
-                      </p>
+                      <p className="text-gray-600">+91 8000088535</p>
                     </div>
                   </div>
 
@@ -188,11 +177,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-2">Email Address</h4>
-                      <p className="text-gray-600">
-                        info@shapel.com<br />
-                        sales@shapel.com<br />
-                        support@shapel.com
-                      </p>
+                      <p className="text-gray-600">info@shreeshaktitechnocast.com</p>
                     </div>
                   </div>
                 </div>
